@@ -14,9 +14,9 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Version>1.0.1</Version>
     <PackageVersion>1.0.1</PackageVersion>
-    <PackageTags></PackageTags>
+    <PackageTags>scripting;evaluation;jint;javascript;js</PackageTags>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <PackageDescription>Description here</PackageDescription>
+    <PackageDescription>Evaluation of expressions using the JINT Javascript engine</PackageDescription>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/alunacjones/LSL.Evaluation.Jint</RepositoryUrl>
     <Authors>alunacjones</Authors>
