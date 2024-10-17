@@ -34,12 +34,8 @@ public class JintEvaluatorFactory : IEvaluatorFactoryWithSettings<JintSettings>
         return new JintEvaluator(engine);
     }
 
-    internal class JintEvaluator : IEvaluator
+    internal class JintEvaluator(Engine engine) : IEvaluator
     {
-        private readonly Engine _engine;
-
-        internal JintEvaluator(Engine engine) => _engine = engine;
-
-        public object Evaluate(string expression) => _engine.Evaluate(expression).ToObject();
+        public object Evaluate(string expression) => engine.Evaluate(expression).ToObject();
     }
 }
