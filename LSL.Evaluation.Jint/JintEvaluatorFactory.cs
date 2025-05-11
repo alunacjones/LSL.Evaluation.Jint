@@ -30,7 +30,8 @@ public class JintEvaluatorFactory : IEvaluatorFactoryWithSettings<JintSettings>
 
         Configure(jintSettings.EngineConfigurators, engine);
         Configure(config.CodeToAdd.Select(c => (Action<Engine>)(e => e.Execute(c))), engine);
-
+        Configure(config.ValuesToSet.Select(c => (Action<Engine>)(e => e.SetValue(c.Name, c.Value))), engine);
+        
         return new JintEvaluator(engine);
     }
 

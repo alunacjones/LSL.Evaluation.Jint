@@ -9,8 +9,8 @@ namespace LSL.Evaluation.Jint;
 /// </summary>
 public class JintSettings
 {
-    internal List<Action<Options>> OptionsConfigurators = new();
-    internal List<Action<Engine>> EngineConfigurators = new();
+    internal List<Action<Options>> OptionsConfigurators = [];
+    internal List<Action<Engine>> EngineConfigurators = [];
 
     /// <summary>
     /// Add a configurator to setup a Jint Options instance

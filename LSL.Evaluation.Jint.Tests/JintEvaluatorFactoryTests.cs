@@ -15,6 +15,7 @@ public class JintEvaluatorFactoryTests
             .Build(c =>
             {
                 c.AddCode("var value1 = 12");
+                c.SetValue("by2", (int i) => i *2);
                 c.Configure(s => s
                     .ConfigureEngine(e => e.Execute("var value2 = 24"))
                     .ConfigureOptions(o => o.AllowClr())
@@ -22,9 +23,9 @@ public class JintEvaluatorFactoryTests
             });
 
         // Act        
-        var result = sut.Evaluate("12 + value1 + value2 + System.Math.Sqrt(144)");
+        var result = sut.Evaluate("by2(12) + value1 + value2 + System.Math.Sqrt(144)");
         
         // Assert
-        result.Should().BeEquivalentTo(60);
+        result.Should().BeEquivalentTo(72);
     }
 }
